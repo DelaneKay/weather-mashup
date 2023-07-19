@@ -94,6 +94,7 @@ function WeatherMashUp() {
     fetchUnsplashImage();
   }, [weatherData]);
 
+
   // Function for fetching the Open Weather API
   const handleFormSubmit = async (city) => {
     try {
@@ -129,6 +130,11 @@ function WeatherMashUp() {
                   <p>
                     There is {weatherData.weather[0].description} in {weatherData.name}
                   </p>
+                  <hr/>
+                  <p>
+                      Please reload this page to enter another city!!!
+                  </p>
+
               </Alert>
               <Card
               >

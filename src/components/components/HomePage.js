@@ -9,8 +9,13 @@ function HomePage({ onFormSubmit }) {
     setCity(event.target.value);
   };
 
+  const handleKeyPress = (event) => {
+      if (event.key === "Enter") {
+        handleFormSubmit();
+      }
+    };
+
   const handleFormSubmit = (event) => {
-    event.preventDefault();
     onFormSubmit(city);
   };
 
@@ -28,6 +33,7 @@ function HomePage({ onFormSubmit }) {
                 aria-describedby="basic-addon2"
                 value={city}
                 onChange={handleInputChange}
+                onKeyPress={handleKeyPress}
               />
               <Button variant="dark" id="button-addon2" onClick={handleFormSubmit}>
                 Search
