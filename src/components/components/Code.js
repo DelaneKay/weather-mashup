@@ -1,9 +1,9 @@
 import React from "react";
-import WeatherMashUp from "./WeatherMashUP";
+
 
 function Code() {
     return (
-        <WeatherMashUp/>
+        <div>Code</div>
     );
 }
 

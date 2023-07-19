@@ -13,6 +13,7 @@ function App() {
         <NavigationBar />
         <Routes>
           <Route path="/" element={<WeatherMashUp/>} />
+          <Route path="/the-app" element={<WeatherMashUp/>} />
           <Route path="/code" element={<Code />} />
           <Route path="/git-repo" element={<GitRepo />} />
           <Route path="/about" element={<About />} />

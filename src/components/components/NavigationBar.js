@@ -20,6 +20,9 @@ function NavigationBar() {
                               <Nav.Link >
                                   <Link to={"/"} >Home</Link>
                               </Nav.Link>
+                            <Nav.Link >
+                                <Link to={"/the-app"} >The App</Link>
+                            </Nav.Link>
                               <Nav.Link >
                                   <Link to={"/code"} >Code</Link>
                               </Nav.Link>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Col, Row, Form, Button, InputGroup, Alert } from "react-bootstrap";
 import '../../App.css'
 
-function HomePage({ onFormSubmit }) {
+function SearchPage({ onFormSubmit }) {
   const [city, setCity] = useState('');
 
   const handleInputChange = (event) => {
@@ -46,4 +46,4 @@ function HomePage({ onFormSubmit }) {
   );
 }
 
-export default HomePage;
+export default SearchPage;

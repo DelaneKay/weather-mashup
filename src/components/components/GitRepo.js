@@ -1,9 +1,9 @@
 import React from "react";
-import Spotify from "./Spotify";
+
 
 function GitRepo() {
     return (
-        <Spotify/>
+        <div>GitRepo</div>
     );
 }
 
