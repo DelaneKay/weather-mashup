@@ -30,3 +30,27 @@
   background-position: center;
   z-index: -1;
 }
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: lightskyblue;
+}
+
+.navbar .active {
+  color: lightskyblue;
+}
+
+
+
+
+

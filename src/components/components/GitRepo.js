@@ -4,7 +4,7 @@ import { FaGithub, FaGitlab, FaCode } from 'react-icons/fa';
 
 
 function GitRepo() {
-    const githubUrl = 'https://github.com/DelaneKay/';
+    const githubUrl = 'https://github.com/DelaneKay/weather-mash-up';
     const gitlabUrl = 'https://gitlab.com/kudakwashe-sibanda/weather-mashup/-/tree/master?ref_type=heads';
 
   return (
