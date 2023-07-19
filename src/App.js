@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavigationBar from "./components/components/NavigationBar";
+import Code from "./components/components/Code";
+import GitRepo from "./components/components/GitRepo";
+import About from "./components/components/About";
+import WeatherMashUp from "./components/components/WeatherMashUP";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<WeatherMashUp/>} />
+          <Route path="/code" element={<Code />} />
+          <Route path="/git-repo" element={<GitRepo />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
