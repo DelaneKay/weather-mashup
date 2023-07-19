@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Alert, Card, CardImg, Col, Container } from "react-bootstrap";
 import axios from "axios";
-import SearchPage from "./HomePage";
+import SearchPage from "./SearchPage";
+
 
 const CLIENT_ID = '327d46894e804b639c22cad035f65300'; // Replace with your actual Spotify client ID
 const CLIENT_SECRET = '3626ccee911b49209110b815652c1b4f'; // Replace with your actual Spotify client secret
