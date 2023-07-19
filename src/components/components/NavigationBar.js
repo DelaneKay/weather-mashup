@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link, Outlet} from "react-router-dom";
+import { TiWeatherPartlySunny } from "react-icons/ti";
 import NavbarCollapse from "react-bootstrap/NavbarCollapse";
 
 function NavigationBar() {
@@ -12,7 +13,12 @@ function NavigationBar() {
             <Navbar sticky="top" className ="text-white" bg="dark" data-bs-theme="dark" collapseOnSelect expand="lg" >
                 <Container>
                   <Navbar.Brand>
-                      Weather Mash-UP
+                      <Nav.Link >
+                          <Link to={"/"} >
+                              <TiWeatherPartlySunny size={32}/>
+                                Weather Mash-UP
+                          </Link>
+                      </Nav.Link>
                   </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">

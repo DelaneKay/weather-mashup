@@ -5,6 +5,7 @@ import Code from "./components/components/Code";
 import GitRepo from "./components/components/GitRepo";
 import About from "./components/components/About";
 import WeatherMashUp from "./components/components/WeatherMashUP";
+import Home from "./components/components/Home";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <div className="app">
         <NavigationBar />
         <Routes>
-          <Route path="/" element={<WeatherMashUp/>} />
+          <Route path="/" element={<Home/>} />
           <Route path="/the-app" element={<WeatherMashUp/>} />
           <Route path="/code" element={<Code />} />
           <Route path="/git-repo" element={<GitRepo />} />
