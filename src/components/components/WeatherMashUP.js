@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Alert, Card, CardImg, Col, Container } from "react-bootstrap";
+import {Alert, Card, CardImg, Col, Container, InputGroup, Button, Form, Row} from "react-bootstrap";
 import axios from "axios";
 import SearchPage from "./SearchPage";
+import SearchCityAgain from "./SearchCityAgain";
+import {FormControl} from "react-bootstrap";
 
 
 const CLIENT_ID = '327d46894e804b639c22cad035f65300'; // Replace with your actual Spotify client ID
@@ -16,6 +18,7 @@ function WeatherMashUp() {
   const [artistName, setArtistName] = useState("");
   const [trackName, setTrackName] = useState("");
   const [imageURL, setImageURL] = useState(null);
+  const [city, setCity] = useState('');
 
   // Function for handling Spotify API
   const fetchSpotifyData = async () => {
@@ -95,6 +98,15 @@ function WeatherMashUp() {
     fetchUnsplashImage();
   }, [weatherData]);
 
+  const handleInputChange = (event) => {
+    setCity(event.target.value);
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleFormSubmit(city);
+    }
+  };
 
   // Function for fetching the Open Weather API
   const handleFormSubmit = async (city) => {
@@ -113,8 +125,31 @@ function WeatherMashUp() {
     <div>
       {
         !weatherData && (
-            <SearchPage onFormSubmit={handleFormSubmit} />
-          )
+          <div className="overlay-container">
+            <div className="background-image"></div>
+            <Container fluid>
+              <Row className="justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
+                <Col xs={10} sm={8} md={6} lg={5} xl={4}>
+                  <InputGroup className="mb-3" style={{ zIndex: '1' }}>
+                    <Form.Control
+                      type="text"
+                      placeholder="Enter the city's name"
+                      aria-label="Enter the city's name"
+                      aria-describedby="basic-addon2"
+                      value={city}
+                      onChange={handleInputChange}
+                      onKeyPress={handleKeyPress}
+                    />
+                    <Button variant="dark" id="button-addon2" onClick={handleFormSubmit}>
+                      Search
+                    </Button>
+                  </InputGroup>
+                  {error && <Alert variant="danger">{error}</Alert>}
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        )
       }
 
       {weatherData && (
@@ -126,16 +161,28 @@ function WeatherMashUp() {
             style={{ minHeight: "100vh", padding: "2rem" }}
           >
             <Col xs={10} sm={8} md={6} lg={5} xl={4}>
+              <div>
+                <InputGroup className="mb-3" style={{ zIndex: '1' }}>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter the city's name"
+                    aria-label="Enter the city's name"
+                    aria-describedby="basic-addon2"
+                    value={city}
+                    onChange={handleInputChange}
+                    onKeyPress={handleKeyPress}
+                  />
+                  <Button variant="dark" id="button-addon2" onClick={handleFormSubmit}>
+                    Search
+                  </Button>
+                </InputGroup>
+                {error && <Alert variant="danger">{error}</Alert>}
+              </div>
               <Alert variant="light">
                   <Alert.Heading>{weatherData.name}</Alert.Heading>
                   <p>
                     There is {weatherData.weather[0].description} in {weatherData.name}
                   </p>
-                  <hr/>
-                  <p>
-                      Please reload this page to enter another city!!!
-                  </p>
-
               </Alert>
               <Card
               >
@@ -163,7 +210,6 @@ function WeatherMashUp() {
           </Container>
         </div>
       )}
-      {error && <Alert variant="danger">{error}</Alert>}
     </div>
   );
 }
