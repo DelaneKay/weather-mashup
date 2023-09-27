@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link, Outlet} from "react-router-dom";
+import { Link} from "react-router-dom";
 import { TiWeatherPartlySunny } from "react-icons/ti";
 import NavbarCollapse from "react-bootstrap/NavbarCollapse";
 

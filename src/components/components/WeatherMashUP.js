@@ -3,8 +3,6 @@ import {Alert, Card, CardImg, Col, Container, InputGroup, Button, Form, Row} fro
 import axios from "axios";
 import SearchPage from "./SearchPage";
 import SearchCityAgain from "./SearchCityAgain";
-import {FormControl} from "react-bootstrap";
-
 
 const CLIENT_ID = '327d46894e804b639c22cad035f65300'; // Replace with your actual Spotify client ID
 const CLIENT_SECRET = '3626ccee911b49209110b815652c1b4f'; // Replace with your actual Spotify client secret
