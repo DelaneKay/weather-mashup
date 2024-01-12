@@ -17,7 +17,7 @@ cd weathermash-up
 ```
 
 ## Step 2: Create Weather Mash-Up Component
-In the src directory, create a new file named `WeatherMashUp.js`. Check the code code above.
+In the src directory, create a new file named `WeatherMashUp.js`. Check the code above.
 
 ## Step 3: Use WeatherMashUp Component in App
 Replace the content of src/App.js with the following:
