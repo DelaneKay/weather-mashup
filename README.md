@@ -45,7 +45,7 @@ export default App;
 ```js
 npm start
 ```
-Visit http://localhost:3000 in your browser to see the FizzBuzz app.
+Visit http://localhost:3000 in your browser to see the WeatherMashUp app.
 
 ## Additional Steps (Optional)
 + Customize the Weather Mash-Up logic or styling based on your preferences.
